@@ -1,0 +1,10 @@
+version: '3'
+services:
+  rstudio:
+    image: rocker/rstudio:latest
+    ports:
+      - "8787:8787"
+    volumes:
+      - ./:/home/rstudio/data
+    environment:
+      - PASSWORD=123456
