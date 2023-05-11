@@ -28,7 +28,7 @@ if(sum(as.numeric(!pacotes %in% installed.packages())) != 0){
 
 ###### Buscar o caminho do diretório onde está salvo a base de dados
 
-basepetr4 <- read_excel("basepetr4.xlsx")
+basepetr4 <- read_excel("data/basepetr4.xlsx")
 
 ###### Lendo a base de dados
 
@@ -141,7 +141,7 @@ par(mfrow=c(1,1))
 
 ###### Importando a base de dados
 
-passageiros <- read_excel("passageiros.xlsx")
+passageiros <- read_excel("data/passageiros.xlsx")
 
 ###### Lendo a base de dados
 
@@ -186,7 +186,7 @@ ggplotly(
 
 ###### Importando a base de dados
 
-ambev <- read_excel("ambev.xlsx")
+ambev <- read_excel("data/ambev.xlsx")
 
 ###### Lendo a base de dados
 View(ambev)
@@ -207,7 +207,7 @@ plot(receita, main="Faturamento Trimestral - Acumulado da AMBEV SA - 1T/2000 ao 
 
 ###### Importando a base de dados
 
-manchas <- read_excel("manchas.xlsx")
+manchas <- read_excel("data/manchas.xlsx")
 
 
 # Transformar o data frame em série de tempo
@@ -299,7 +299,7 @@ legend("bottomright", c('Cotação Original','Random Walk'), lty = 1:2, bty='n')
 
 # lendo a base de dados: Fonte: https://covid.saude.gov.br/
 
-covid <- read_excel("covid.xlsx")
+covid <- read_excel("data/covid.xlsx")
 
 # visualizando a série com as médias móveis
 ggplotly(
@@ -423,7 +423,7 @@ decompm$random
 # usando o pacote viridis
 ###### decomposição da série temporal do PIB Mensal BR
 
-pib <- read_excel("pib_mensal.xlsx")
+pib <- read_excel("data/pib_mensal.xlsx")
 
 #Transformando a base de dados em um objeto de classe ts
 pib_ts <- ts(data = pib[, 2],
