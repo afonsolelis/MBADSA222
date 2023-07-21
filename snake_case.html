@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conversor para Snake Case</title>
+</head>
+<body>
+    <h1>Conversor para Snake Case</h1>
+    <p>Digite a frase:</p>
+    <input type="text" id="fraseInput">
+    <button onclick="converterParaSnakeCase()">Converter</button>
+    <p>Resultado:</p>
+    <p id="resultado"></p>
+
+    <script>
+        function removerAcentos(texto) {
+            return texto.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        }
+
+        function converterParaSnakeCase() {
+            const frase = document.getElementById('fraseInput').value;
+            const fraseSemAcentos = removerAcentos(frase);
+            const fraseSemCaracteresEspeciais = fraseSemAcentos.replace(/[^\w\s]/g, '');
+            const snakeCase = fraseSemCaracteresEspeciais.replace(/\s+/g, '_').toLowerCase();
+            
+            document.getElementById('resultado').textContent = snakeCase;
+        }
+    </script>
+</body>
+</html>
