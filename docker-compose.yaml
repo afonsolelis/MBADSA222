@@ -1,11 +1,11 @@
 version: '3'
 services:
   rstudio:
-    image: rstudio_custom
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: rocker/rstudio:latest
     ports:
       - "8787:8787"
     environment:
-      - PASSWORD=123456
+      - PASSWORD=abcd
+    container_name: rstudio_container
+    volumes:
+      - ./:/home/rstudio

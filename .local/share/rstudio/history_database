@@ -1,0 +1,16 @@
+1694470719806:##################################################################################
+1694470719807:#                  INSTALAÇÃO E CARREGAMENTO DE PACOTES NECESSÁRIOS             #
+1694470719808:##################################################################################
+1694470719809:#Pacotes utilizados
+1694470719810:pacotes <- c("tidytext","ggplot2","dplyr","tibble","wordcloud",
+1694470719811:"stringr","SnowballC","widyr","janeaustenr","lexiconPT",
+1694470719812:"tidyr","readxl","tm","e1071","gmodels","caret","reshape2","textdata")
+1694470719814:if(sum(as.numeric(!pacotes %in% installed.packages())) != 0){
+1694470719815:instalador <- pacotes[!pacotes %in% installed.packages()]
+1694470719816:for(i in 1:length(instalador)) {
+1694470719817:install.packages(instalador, dependencies = T)
+1694470719818:break()}
+1694470719819:sapply(pacotes, require, character = T)
+1694470719820:} else {
+1694470719821:sapply(pacotes, require, character = T)
+1694470719822:}
